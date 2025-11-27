@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Spott",
@@ -18,12 +19,20 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Header/>
           <main className=" relative min-h-screen container mx-auto pt-40 md:pt-32">
             <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl"></div>
             </div>
-            <div className="relative z-10">{children}</div>
+            <div className="relative z-10 min-h-[80vh]">{children}</div>
+            <footer className="border-t border-gray-800/50 px-8 py-6 max-w-7xl mx-auto">
+              <div>
+                <p className="text-sm text-gray-400">
+                  &copy; {new Date().getFullYear()} Spott. All rights reserved.
+                </p>
+              </div>
+            </footer>
           </main>
         </ThemeProvider>
       </body>
