@@ -12,7 +12,7 @@ import { Building, Plus, Ticket } from "lucide-react";
 
 const Header = () => {
   const { isLoading } = useStoreUser();
-  const [showUpgradeModal, setShowUpgradeModal] = useState();
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   return (
     <>
@@ -32,7 +32,7 @@ const Header = () => {
           {/* search */}
           {/* right side actions */}
           <div className="flex items-center">
-            <Button variant={"ghost"} size={"sm"} onClick={setShowUpgradeModal}>
+            <Button variant={"ghost"} size={"sm"} onClick={() => setShowUpgradeModal(true)}>
               Pricing
             </Button>
 
