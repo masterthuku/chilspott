@@ -43,14 +43,13 @@ export const getEventsByLocation = query({
 
     if (args.city) {
       filtered = filtered.filter(
-        (e) => e.city.toLowerCase() === args.city.toLowerCase()
+        (e) => e.city?.toLowerCase() === args.city.toLowerCase()
       );
     } else if (args.state) {
       filtered = filtered.filter(
         (e) => e.state?.toLowerCase() === args.state.toLowerCase()
       );
     }
-
     return filtered.slice(0, args.limit ?? 4);
   },
 });

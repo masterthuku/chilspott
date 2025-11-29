@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
   title: "Spott",
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
                     </p>
                   </div>
                 </footer>
+                <Toaster richColors/>
               </main>
             </ConvexClientProvider>
           </ClerkProvider>
